@@ -1,7 +1,7 @@
-package com.artemka.homework2_9.controller;
+package com.artemka.homework3_0.controller;
 
-import com.artemka.homework2_9.model.Employee;
-import com.artemka.homework2_9.service.impl.EmployeeServiceImpl;
+import com.artemka.homework3_0.model.Employee;
+import com.artemka.homework3_0.service.impl.EmployeeServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;

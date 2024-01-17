@@ -1,4 +1,4 @@
-package com.artemka.homework2_9.model;
+package com.artemka.homework3_0.model;
 
 import java.util.Objects;
 

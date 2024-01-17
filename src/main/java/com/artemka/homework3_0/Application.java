@@ -1,4 +1,4 @@
-package com.artemka.homework2_9;
+package com.artemka.homework3_0;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

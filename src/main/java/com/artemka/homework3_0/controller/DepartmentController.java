@@ -1,7 +1,7 @@
-package com.artemka.homework2_9.controller;
+package com.artemka.homework3_0.controller;
 
-import com.artemka.homework2_9.model.Employee;
-import com.artemka.homework2_9.service.DepartmentService;
+import com.artemka.homework3_0.model.Employee;
+import com.artemka.homework3_0.service.DepartmentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

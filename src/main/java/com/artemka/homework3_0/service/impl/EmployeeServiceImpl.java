@@ -1,9 +1,9 @@
-package com.artemka.homework2_9.service.impl;
+package com.artemka.homework3_0.service.impl;
 
-import com.artemka.homework2_9.service.EmployeeService;
-import com.artemka.homework2_9.exeptions.EmployeeAlreadyAddedException;
-import com.artemka.homework2_9.exeptions.EmployeeNotFoundException;
-import com.artemka.homework2_9.model.Employee;
+import com.artemka.homework3_0.service.EmployeeService;
+import com.artemka.homework3_0.exeptions.EmployeeAlreadyAddedException;
+import com.artemka.homework3_0.exeptions.EmployeeNotFoundException;
+import com.artemka.homework3_0.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

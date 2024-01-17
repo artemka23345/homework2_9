@@ -1,4 +1,4 @@
-package com.artemka.homework2_9.exeptions;
+package com.artemka.homework3_0.exeptions;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;

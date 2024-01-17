@@ -1,8 +1,7 @@
-package com.artemka.homework2_9.service;
+package com.artemka.homework3_0.service;
 
-import com.artemka.homework2_9.model.Employee;
+import com.artemka.homework3_0.model.Employee;
 import java.util.Collection;
-import java.util.Map;
 
 public interface EmployeeService {
 
