@@ -3,13 +3,13 @@ package com.artemka.homework3_0.model;
 import java.util.Objects;
 
 public class Employee {
-    String fistName;
+    String firstName;
     String lastName;
     int department;
     int salary;
 
-    public Employee(String fistName, String lastName, int department, int salary) {
-        this.fistName = fistName;
+    public Employee(String firstName, String lastName, int department, int salary) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
@@ -32,8 +32,8 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getFestName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
     public String getLastName() {
@@ -41,7 +41,7 @@ public class Employee {
     }
 
     public String getFullName() {
-        return fistName + " " + lastName;
+        return firstName + " " + lastName;
     }
 
     @Override
@@ -49,19 +49,19 @@ public class Employee {
         if (this == o) return true;
         if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(fistName, employee.fistName) && Objects.equals(lastName, employee.lastName);
+        return Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fistName, lastName);
+        return Objects.hash(firstName, lastName);
     }
 
 
     @Override
     public String toString() {
         return "Employee{" +
-                "fistName='" + fistName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
