@@ -1,5 +1,6 @@
 package com.artemka.homework3_0.service.impl;
 
+import com.artemka.homework3_0.exeptions.InvalidInputException;
 import com.artemka.homework3_0.service.EmployeeService;
 import com.artemka.homework3_0.exeptions.EmployeeAlreadyAddedException;
 import com.artemka.homework3_0.exeptions.EmployeeNotFoundException;
@@ -31,10 +32,16 @@ this.employeeBook = Maps.newHashMap(Map.of(
 
     @Override
     public Employee add(String firstName, String lastName, int department, int salary) {
-        Employee employee = new Employee(firstName, lastName, department, salary);
+
+        if (StringUtils.isWhitespace(firstName) || StringUtils.isWhitespace(lastName) || StringUtils.isAllEmpty(firstName)
+            || StringUtils.isAllEmpty(lastName))  {
+            throw new InvalidInputException();
+        }
+        Employee employee = new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), department, salary);
         if (employeeBook.containsKey(employee.getFullName())) {
             throw new EmployeeAlreadyAddedException();
         }
+
         employeeBook.put(employee.getFullName(), employee);
         return employee;
     }
@@ -42,7 +49,7 @@ this.employeeBook = Maps.newHashMap(Map.of(
     @Override
 
     public Employee remove(String firstName, String lastName, int department, int salary) {
-        Employee employee = new Employee(firstName, lastName, department, salary);
+        Employee employee = new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), department, salary);
         if (employeeBook.containsKey(employee.getFullName())) {
             return employeeBook.remove(employee.getFullName());
         }
@@ -52,7 +59,7 @@ this.employeeBook = Maps.newHashMap(Map.of(
     @Override
 
     public Employee find(String firstName, String lastName, int department, int salary) {
-        Employee employee = new Employee(firstName, lastName, department, salary);
+        Employee employee = new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), department, salary);
         if (employeeBook.containsKey(employee.getFullName())) {
             return employeeBook.get(employee.getFullName());
         }
