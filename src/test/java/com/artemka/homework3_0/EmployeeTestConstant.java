@@ -19,6 +19,9 @@ import static java.util.stream.Collectors.groupingBy;
         public static final String FIRST_NAME_2 = "Сергей";
         public static final String LAST_NAME_2 = "Петров";
 
+        public static final String FIRST_NAME_3 = "Сергей*-";
+        public static final String LAST_NAME_3 = "Петров*-";
+
 
 
         public static final Employee MAX_SALARY_EMPLOYEE = new Employee(FIRST_NAME,LAST_NAME,DEPARTMENT,SALARY);

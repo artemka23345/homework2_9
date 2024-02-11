@@ -8,6 +8,7 @@ public interface EmployeeService {
     Employee add(String firstName, String lastName, int department, int salary);
     Employee remove(String firstName, String lastName, int department, int salary);
     Employee find(String firstName, String lastName, int department, int salary);
+    void validateInput(String firstName, String lastName);
     Collection<Employee> getEmployees();
 
 }

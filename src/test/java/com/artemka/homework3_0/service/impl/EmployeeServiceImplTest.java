@@ -3,6 +3,7 @@ package com.artemka.homework3_0.service.impl;
 
 import com.artemka.homework3_0.exeptions.EmployeeAlreadyAddedException;
 import com.artemka.homework3_0.exeptions.EmployeeNotFoundException;
+import com.artemka.homework3_0.exeptions.InvalidInputException;
 import com.artemka.homework3_0.model.Employee;
 import com.artemka.homework3_0.service.EmployeeService;
 import org.junit.jupiter.api.Test;
@@ -95,5 +96,9 @@ class EmployeeServiceImplTest {
         Collection<Employee> actual = out.getEmployees();
 
         assertIterableEquals(existed, actual);
+    }
+    @Test
+    void shouldThrowInvalidInputExceptionTest() {
+        assertThrows(InvalidInputException.class, () -> out.validateInput(FIRST_NAME_3, LAST_NAME_3));
     }
 }

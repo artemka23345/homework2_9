@@ -64,7 +64,7 @@ this.employeeBook = Maps.newHashMap(Map.of());
         return Collections.unmodifiableCollection(employeeBook.values());
     }
 
-    private void validateInput(String firstName, String lastName){
+    public void validateInput(String firstName, String lastName){
         if (!(isAlpha(firstName) && isAlpha(lastName))){
             throw new InvalidInputException();
         }
