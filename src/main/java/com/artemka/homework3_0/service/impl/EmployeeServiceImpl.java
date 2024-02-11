@@ -17,8 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     public EmployeeServiceImpl() {
-
-this.employeeBook = Maps.newHashMap(Map.of());
+        this.employeeBook = Maps.newHashMap(Map.of());
     }
 
 

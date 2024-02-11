@@ -16,6 +16,7 @@ import static java.util.stream.Collectors.groupingBy;
         public static final int MIN_SALARY = 50000;
         public static final int DEPARTMENT = 1;
 
+
         public static final String FIRST_NAME_2 = "Сергей";
         public static final String LAST_NAME_2 = "Петров";
 
