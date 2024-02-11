@@ -35,8 +35,6 @@
 			<version>32.1.2-jre</version>
 		</dependency>
 
-
-
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

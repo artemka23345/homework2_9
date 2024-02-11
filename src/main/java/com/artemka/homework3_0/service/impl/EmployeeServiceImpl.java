@@ -18,14 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public EmployeeServiceImpl() {
 
-this.employeeBook = Maps.newHashMap(Map.of(
-                "Алексей Андреев", new Employee("Алексей", "Андреев", 1, 65000),
-                "София Иванова", new Employee("София", "Артёмовна", 2, 64000),
-                "Алиса Колесникова ", new Employee("Алиса", " Колесникова", 3, 63000),
-                "Гордей Балашов", new Employee("Гордей", "Балашов", 5, 47000),
-                "Артём Горбунов", new Employee("Артём", "Горбунов", 5, 28000),
-                "Ксения Кириллова", new Employee("Ксения", "Кириллова", 3, 54000)));
-
+this.employeeBook = Maps.newHashMap(Map.of());
     }
 
 

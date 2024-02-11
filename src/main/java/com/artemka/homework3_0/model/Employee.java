@@ -7,10 +7,10 @@ import java.util.Objects;
 import static org.apache.commons.lang3.StringUtils.*;
 
 public class Employee {
-    String firstName;
-    String lastName;
-    int department;
-    int salary;
+    private String firstName;
+    private String lastName;
+    private int department;
+    private int salary;
 
     public Employee(String firstName, String lastName, int department, int salary) {
         this.firstName = capitalize(firstName.toLowerCase());
