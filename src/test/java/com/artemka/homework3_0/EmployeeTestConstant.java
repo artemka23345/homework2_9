@@ -26,13 +26,5 @@ import static java.util.stream.Collectors.groupingBy;
         public static final String LAST_NAME_3 = "Петров*-";
 
 
-
-        public static final Employee MAX_SALARY_EMPLOYEE = new Employee(FIRST_NAME,LAST_NAME,DEPARTMENT,SALARY);
-        public static final Employee MIN_SALARY_EMPLOYEE = new Employee(FIRST_NAME,LAST_NAME,DEPARTMENT,MIN_SALARY);
-        public static final List<Employee> EMPLOYEES = List.of(MIN_SALARY_EMPLOYEE, MAX_SALARY_EMPLOYEE);
-        public static final Employee DIFFRENT_DEPARTMENT_EMPLOYEE = new Employee(FIRST_NAME,LAST_NAME,DEPARTMENT,SALARY);
-        public static final Set<Employee> DIFFERENT_DEPARTMENT_EMPLOYEES = Set.of(MIN_SALARY_EMPLOYEE, DIFFRENT_DEPARTMENT_EMPLOYEE);
-        public static final Map<Integer, List<Employee>> DEPARTMENT_MAP =
-                DIFFERENT_DEPARTMENT_EMPLOYEES.stream().collect(groupingBy(Employee::getDepartment));
     }
 
