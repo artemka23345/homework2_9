@@ -39,7 +39,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return service.getEmployees()
                 .stream()
                 .filter(employee -> employee.getDepartment() == department)
-                .max(Comparator.comparingDouble(Employee::getSalary)).orElseThrow(EmployeeNotFoundException::new);
+                .max(Comparator.comparingDouble(Employee::getSalary)).orElse(null);
 
     }
 
@@ -50,5 +50,12 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .filter(employee -> employee.getDepartment() == department)
                 .min(Comparator.comparingDouble(Employee::getSalary)).orElseThrow(EmployeeNotFoundException::new);
 
+    }
+    @Override
+    public int sumSalary(int department) {
+        return service.getEmployees().stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .mapToInt(Employee::getSalary)
+                .sum();
     }
 }
