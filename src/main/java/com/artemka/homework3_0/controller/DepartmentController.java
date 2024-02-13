@@ -5,9 +5,12 @@ import com.artemka.homework3_0.service.DepartmentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 
 @RestController
-@RequestMapping("/departments")
+@RequestMapping("/department")
 public class DepartmentController {
     private final DepartmentService service;
 
@@ -15,20 +18,28 @@ public class DepartmentController {
         this.service = service;
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<?> getAllByDepartment(@RequestParam(required = false) Integer department) {
-        return department == null ?
-                ResponseEntity.ok(service.getAll()) :
-                ResponseEntity.ok(service.getAllByDepartment(department));
+    @GetMapping("{id}/employees")
+    public ResponseEntity<?> getAllByDepartment(@PathVariable("id") Integer department) {
+        return ResponseEntity.ok(service.getAllByDepartment(department));
     }
 
-    @GetMapping("/max-salary")
-    public Employee maxSalary(@RequestParam Integer department) {
+    @GetMapping("/{id}/salary/max")
+    public Employee maxSalary(@PathVariable("id") Integer department) {
         return service.maxSalary(department);
     }
 
-    @GetMapping("/min-salary")
-    public Employee minSalary(@RequestParam Integer department) {
+    @GetMapping("/{id}/salary/min")
+    public Employee minSalary(@PathVariable("id") Integer department) {
         return service.minSalary(department);
     }
+
+    @GetMapping("/{id}/salary/sum")
+    public int sumSalaryDepartment(@PathVariable("id") Integer department) {
+        return service.sumSalary(department);
+    }
+    @GetMapping("/employees")
+    public Map<Integer, List<Employee>> getAll() {
+        return service.getAll();
+    }
+
 }

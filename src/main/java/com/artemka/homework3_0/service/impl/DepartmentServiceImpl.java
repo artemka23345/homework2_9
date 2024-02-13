@@ -3,6 +3,7 @@ package com.artemka.homework3_0.service.impl;
 import com.artemka.homework3_0.service.DepartmentService;
 import com.artemka.homework3_0.exeptions.EmployeeNotFoundException;
 import com.artemka.homework3_0.model.Employee;
+import com.artemka.homework3_0.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -13,9 +14,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
-    private final EmployeeServiceImpl service;
+    private final EmployeeService service;
 
-    public DepartmentServiceImpl(EmployeeServiceImpl service) {
+    public DepartmentServiceImpl(EmployeeService service) {
         this.service = service;
     }
 
@@ -39,7 +40,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return service.getEmployees()
                 .stream()
                 .filter(employee -> employee.getDepartment() == department)
-                .max(Comparator.comparingDouble(Employee::getSalary)).orElseThrow(EmployeeNotFoundException::new);
+                .max(Comparator.comparingDouble(Employee::getSalary)).orElse(null);
 
     }
 
@@ -50,5 +51,12 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .filter(employee -> employee.getDepartment() == department)
                 .min(Comparator.comparingDouble(Employee::getSalary)).orElseThrow(EmployeeNotFoundException::new);
 
+    }
+    @Override
+    public int sumSalary(int department) {
+        return service.getEmployees().stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .mapToInt(Employee::getSalary)
+                .sum();
     }
 }
