@@ -22,7 +22,7 @@ class EmployeeServiceImplTest {
     private final EmployeeService out = new EmployeeServiceImpl();
 
     @Test
-    void AddEmployeeTest() {
+    void addEmployeeTest() {
 
         Employee expected = new Employee(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY);
 
@@ -38,7 +38,7 @@ class EmployeeServiceImplTest {
     }
 
     @Test
-    void EmployeeAlreadyAddedExceptionTest() {
+    void employeeAlreadyAddedExceptionTest() {
         Employee existed = out.add(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY);
 
         assertTrue(out.getEmployees().contains(existed));
@@ -46,21 +46,21 @@ class EmployeeServiceImplTest {
     }
 
     @Test
-    void FindEmployeeTest() {
+    void findEmployeeTest() {
         Employee existed = out.add(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY);
 
         assertEquals(existed, out.find(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY));
     }
 
     @Test
-    void EmployeeNotFoundExceptionTest() {
+    void employeeNotFoundExceptionTest() {
         assertEquals(0, out.getEmployees().size());
 
         assertThrows(EmployeeNotFoundException.class, () -> out.find(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY));
     }
 
     @Test
-    void RemoveEmployeeTest() {
+    void removeEmployeeTest() {
         Employee expected = out.add(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY);
 
         assertEquals(1, out.getEmployees().size());
@@ -74,19 +74,19 @@ class EmployeeServiceImplTest {
     }
 
     @Test
-    void EmployeeRemoveNotFoundExceptionTest() {
+    void employeeRemoveNotFoundExceptionTest() {
         assertTrue(out.getEmployees().isEmpty());
 
         assertThrows(EmployeeNotFoundException.class, () -> out.remove(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY));
     }
 
     @Test
-    void EmptyCollectionTest() {
+    void emptyCollectionTest() {
         assertIterableEquals(emptyList(), out.getEmployees());
     }
 
     @Test
-    void CollectionListTest() {
+    void collectionListTest() {
         Employee employee = out.add(FIRST_NAME, LAST_NAME, DEPARTMENT, SALARY);
 
         Employee employee2 = out.add(FIRST_NAME_2, LAST_NAME_2, DEPARTMENT, SALARY);
@@ -99,7 +99,7 @@ class EmployeeServiceImplTest {
     }
 
     @Test
-    void InvalidInputExceptionTest() {
+    void invalidInputExceptionTest() {
         assertThrows(InvalidInputException.class, () -> out.validateInput(FIRST_NAME_3, LAST_NAME_3));
     }
 }

@@ -2,19 +2,14 @@ package com.artemka.homework3_0.service.impl;
 
 import com.artemka.homework3_0.exeptions.EmployeeNotFoundException;
 import com.artemka.homework3_0.model.Employee;
-import com.artemka.homework3_0.service.EmployeeService;
-import com.google.common.collect.Maps;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.*;
 
 import static com.artemka.homework3_0.EmployeeTestConstant.*;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
@@ -37,14 +32,14 @@ public class DepartmentServiceImplTest {
 
 
     @Test
-    void MaxSalaryTest() {
+    void maxSalaryTest() {
         when(employeeService.getEmployees()).thenReturn(employees);
 
         assertEquals(employees.get(1), out.maxSalary(DEPARTMENT));
     }
 
     @Test
-    void MinSalaryTest() {
+    void minSalaryTest() {
         when(employeeService.getEmployees()).thenReturn(employees);
 
         assertEquals(employees.get(0), out.minSalary(DEPARTMENT));
